@@ -11,8 +11,9 @@ import HomeScreen from '../HomeScreen';
 const Drawer = createDrawerNavigator();
 
 const DrawerNav = () => {
+  console.log("press");
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator initialRouteName="HomeScreen">
     <Drawer.Screen name="HomeScreen" component={HomeScreen} />
     <Drawer.Screen name="AboutScreen" component={AboutScreen} />
     <Drawer.Screen name="ManageProfile" component={ManageProfile} />

@@ -9,6 +9,10 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+
+import com.facebook.react.bridge.JSIModulePackage; // << add
+import com.swmansion.reanimated.ReanimatedJSIModulePackage; // << add
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,6 +31,11 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new MyReactNativePackage());
           return packages;
         }
+
+        @Override //<<add this function
+      protected JSIModulePackage getJSIModulePackage() {
+        return new ReanimatedJSIModulePackage(); 
+      }
 
         @Override
         protected String getJSMainModuleName() {
